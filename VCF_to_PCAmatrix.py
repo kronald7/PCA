@@ -6,8 +6,8 @@ import numpy as np
 from sklearn import decomposition
 import pandas as pd
 
-vcf_filename = "snps_forPCA.vcf.gz"
-panel_filename = "panel_file.txt" 
+vcf_filename = "/Users/ronky/Projects/WGS_SANRUHRP/snps_forPCA.vcf.gz"
+panel_filename = "/Users/ronky/Projects/WGS_SANRUHRP/panel_file.txt" 
 
 genotypes = []
 samples = []
