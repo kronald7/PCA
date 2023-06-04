@@ -27,6 +27,8 @@ with open(panel) as panel_file:
         line = line.strip().split('\t')
         labels[line[0]] = line[1]
 
+# Transform genotypes to a matrix
+ 
 genotypes = np.array(genotypes)
 matrix = np.count_nonzero(genotypes, axis=2)
 matrix = matrix.T
