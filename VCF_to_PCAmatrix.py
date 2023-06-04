@@ -6,13 +6,13 @@ import numpy as np
 from sklearn import decomposition
 import pandas as pd
 
-vcf_filename = "/Users/ronky/Projects/WGS_SANRUHRP/snps_forPCA.vcf.gz"
-panel_filename = "/Users/ronky/Projects/WGS_SANRUHRP/panel_file.txt" 
+my_vcf = "/Users/ronky/Projects/WGS_SANRUHRP/snps_forPCA.vcf.gz"
+panel = "/Users/ronky/Projects/WGS_SANRUHRP/panel_file.txt" 
 
 genotypes = []
 samples = []
 variant_ids = []
-with VariantFile(vcf_filename) as vcf_reader:
+with VariantFile(my_vcf) as vcf_reader:
     for record in vcf_reader:
         alleles = [record.samples[x].allele_indices for x in record.samples]
         samples = [sample for sample in record.samples]
@@ -21,7 +21,7 @@ with VariantFile(vcf_filename) as vcf_reader:
 
 # make a label file with dictionary like {sample_id: population_code}
 
-with open(panel_filename) as panel_file:
+with open(panel) as panel_file:
     labels = {}  # {sample_id: population_code}
     for line in panel_file:
         line = line.strip().split('\t')
