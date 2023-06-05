@@ -1,5 +1,4 @@
-### The final output of this py script is a matrix shaped csv file
-# ready for the PCA analysis.
+### The final output of this py script is a matrix shaped csv file ready for PCA
 
 from pysam import VariantFile
 import numpy as np
